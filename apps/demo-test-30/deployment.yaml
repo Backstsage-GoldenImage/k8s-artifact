@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-test-30
+  labels:
+    backstage.io/kubernetes-id: demo-test-30
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-test-30
+  template:
+    metadata:
+      labels:
+        app: demo-test-30
+        backstage.io/kubernetes-id: demo-test-30
+    spec:
+      containers:
+        - name: demo-test-30
+          image: ghcr.io/backstagessppoc/demo-test-30:4acd5a39976a040f1ddb88169f18703d961f6e28
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000

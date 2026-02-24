@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-test-30
+spec:
+  selector:
+    app: demo-test-30
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: ClusterIP
