@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dot-2
+  labels:
+    backstage.io/kubernetes-id: dot-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dot-2
+  template:
+    metadata:
+      labels:
+        app: dot-2
+        backstage.io/kubernetes-id: dot-2
+    spec:
+      containers:
+        - name: dot-2
+          image: chaitanyapandeygspann/dot-2:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
