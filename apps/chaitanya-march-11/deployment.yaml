@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chaitanya-march-11
+  labels:
+    backstage.io/kubernetes-id: chaitanya-march-11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chaitanya-march-11
+  template:
+    metadata:
+      labels:
+        app: chaitanya-march-11
+        backstage.io/kubernetes-id: chaitanya-march-11
+    spec:
+      containers:
+        - name: chaitanya-march-11
+          image: chaitanyapandeygspann/chaitanya-march-11:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
